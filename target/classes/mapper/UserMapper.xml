@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.com.pv.demo.mapper.UserMapper">
+    <insert id="insertUser">
+        insert into user values (null, #{uname}, #{password}, #{uaccount})
+    </insert>
+    <select id="selectUserByUact" resultType="main.com.pv.demo.entity.User">
+        select * from user where uaccount = #{uact}
+    </select>
+    <select id="selectUpwdByUid" resultType="java.lang.String">
+        select password from user where uaccount = #{uact}
+    </select>
+</mapper>
